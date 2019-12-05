@@ -1,2 +1,2 @@
-from svelte_components import load_components
+from .svelte_components import load_components
 load_components()
