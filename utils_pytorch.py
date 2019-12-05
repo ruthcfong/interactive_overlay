@@ -11,7 +11,7 @@ from torchray.attribution.common import Probe, get_module
 def load_image(url):
     """Return :class:`PIL.Image` loaded from url."""
     response = requests.get(url)
-    img = Image.open(BytesIO(response.content))
+    img = Image.open(BytesIO(response.content)).convert('RGB')
     return img
 
 

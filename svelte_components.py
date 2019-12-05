@@ -117,7 +117,6 @@ components["CossimOverlayMulti"] = """
 
 
 components["CossimOverlayMultiSeparate"] = """
-
 {#each range(n_images) as n_img}
 <div class="container" style="width: {size}px; height: {size}px; float: left; margin: 5px;">
   <div class="title" style="z-index: 15">{(titles == undefined) ? '' : titles[n_img]}</div>
