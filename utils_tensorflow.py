@@ -17,8 +17,8 @@ def get_acts(model, x, layer_name):
   Returns:
     (:class:`numpy.ndarray`): intermediate activations .
   """
-  with tf.Graph().as_default(), tf.Session():
-    t_input = tf.placeholder(tf.float32, [224, 224, 3])
+  with tf.Graph().as_default(), tf.compat.v1.Session():
+    t_input = tf.compat.v1.placeholder(tf.float32, [224, 224, 3])
     T = render.import_model(model, t_input, t_input)
     acts = T(layer_name).eval({t_input: x})[0]
   return acts
