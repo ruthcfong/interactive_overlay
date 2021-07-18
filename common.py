@@ -1,6 +1,8 @@
 import numpy as np
 import PIL
 
+import os
+
 
 YELLOW = (1., 1., 0.)
 
