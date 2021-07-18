@@ -1,6 +1,7 @@
 import numpy as np
 # import tensorflow as tf
 import tensorflow.compat.v1 as tf
+import tensorflow.contrib as tfc
 
 import lucid.optvis.render as render
 
@@ -28,7 +29,7 @@ def get_acts(model, x, layer_name):
 def get_acts_rotate(model, layer, img, rot_angle=0.0, interpolation='NEAREST'):
   with tf.Graph().as_default(), tf.Session():
     t_input = tf.placeholder(tf.float32, [224, 224, 3])
-    rot_input = tf.contrib.image.rotate(t_input, rot_angle,
+    rot_input = tfc.image.rotate(t_input, rot_angle,
                                         interpolation=interpolation)
     T = render.import_model(model, rot_input, rot_input)
     acts = T(layer).eval({t_input: img})[0]
