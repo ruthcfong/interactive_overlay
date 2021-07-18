@@ -1,6 +1,7 @@
 import numpy as np
 import PIL
 
+import math
 import os
 
 from lucid.misc.io.serialize_array import _normalize_array
