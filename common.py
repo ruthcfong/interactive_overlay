@@ -3,6 +3,8 @@ import PIL
 
 import os
 
+from lucid.misc.io.serialize_array import _normalize_array
+
 
 YELLOW = (1., 1., 0.)
 
